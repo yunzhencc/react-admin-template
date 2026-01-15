@@ -1,0 +1,48 @@
+{
+  "name": "react-antd-admin-template",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=22.13.1"
+  },
+  "scripts": {
+    "start": "turbo run dev --parallel",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
+    "release": "changeset",
+    "prepare": "simple-git-hooks",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:dev",
+    "@changesets/cli": "catalog:dev",
+    "@commitlint/cli": "catalog:dev",
+    "@commitlint/config-conventional": "catalog:dev",
+    "@commitlint/types": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "cross-env": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-format": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "turbo": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no -- commitlint --edit $1",
+    "pre-commit": "npx lint-staged",
+    "preserveUnused": [
+      "commit-msg"
+    ]
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

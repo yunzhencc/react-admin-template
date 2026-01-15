@@ -1,0 +1,17 @@
+import antfu from '@antfu/eslint-config';
+
+export default antfu({
+  stylistic: {
+    semi: true,
+    indent: 2,
+    quotes: 'single',
+  },
+  rules: {},
+  react: true,
+  typescript: true,
+  ignores: [
+    'tsconfig.json',
+    'tsconfig.app.json',
+    'tsconfig.node.json'
+  ],
+});
