@@ -1,5 +1,5 @@
 {
-  "name": "react-antd-admin-template",
+  "name": "react-admin-template",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -23,14 +23,18 @@
     "@commitlint/config-conventional": "catalog:dev",
     "@commitlint/types": "catalog:dev",
     "@types/node": "catalog:dev",
+    "@types/react": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
     "cross-env": "catalog:dev",
+    "@vitejs/plugin-react": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "turbo": "catalog:dev",
     "typescript": "catalog:dev",
-    "vitest": "catalog:dev"
+    "vitest": "catalog:dev",
+    "vite": "catalog:dev"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no -- commitlint --edit $1",

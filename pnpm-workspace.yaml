@@ -37,5 +37,8 @@ catalogs:
     vite-plugin-html: ^3.2.2
     vitest: ^4.0.16
   integrations:
+    '@yunzhen/request': ^1.0.1
+    antd: ^6.2.0
+    es-toolkit: ^1.43.0
     react: ^19.2.3
     react-dom: ^19.2.3

@@ -9,14 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@yunzhen/request": "catalog:integrations",
+    "antd": "catalog:integrations",
+    "es-toolkit": "catalog:integrations",
     "react": "catalog:integrations",
     "react-dom": "catalog:integrations"
-  },
-  "devDependencies": {
-    "@types/react": "catalog:dev",
-    "@types/react-dom": "catalog:dev",
-    "@vitejs/plugin-react": "catalog:dev",
-    "typescript": "catalog:dev",
-    "vite": "catalog:dev"
   }
 }
