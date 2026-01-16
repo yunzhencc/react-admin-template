@@ -1,3 +1,11 @@
 @layer theme, base, antd, components, utilities;
 
 @import "tailwindcss";
+
+@theme {
+  --color-slot-bg: #5278f568;
+  --color-slot-text: #5278f5;
+  --color-slot-placeholder: #4967c7;
+
+  --spacing-15: 3.75rem;
+}

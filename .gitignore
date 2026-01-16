@@ -27,5 +27,6 @@ dist-ssr
 # turbo
 .turbo
 
+.tanstack
 routeTree.gen.ts
 stats.html

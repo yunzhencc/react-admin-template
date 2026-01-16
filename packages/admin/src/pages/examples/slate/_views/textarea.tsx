@@ -7,7 +7,6 @@ import { createEditor, Editor } from 'slate';
 import { withHistory } from 'slate-history';
 import { DefaultElement, Editable, Slate, withReact } from 'slate-react';
 import { PlaceholderElement } from '../_components';
-import './App.css';
 
 declare module 'slate' {
   interface CustomTypes {
@@ -74,20 +73,20 @@ function Textarea() {
   };
 
   return (
-    <div className="container">
+    <div className="p-3">
       <Card>
         <Button onClick={getText}>获取文本</Button>
         <Divider />
-        <div className="editor-container">
+        <div className="relative flex h-full max-h-44 w-full flex-1 items-start break-words whitespace-pre-wrap text-base">
           <Slate editor={editor} initialValue={initialValue}>
             <Editable
-              className="editable"
+              className="mt-0 min-h-15 flex-1 overflow-x-hidden overflow-y-auto outline-none box-content h-fit max-h-inherit focus:outline-none [scrollbar-width:auto!important]"
               renderElement={renderElement}
               renderLeaf={({ attributes, children }) => {
                 return (
                   <span
                     {...attributes}
-                    className="vain-leaf"
+                    className="pl-px"
                   >
                     {children}
                   </span>

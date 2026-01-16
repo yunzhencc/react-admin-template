@@ -22,6 +22,7 @@
     "slate": "catalog:integrations",
     "slate-history": "catalog:integrations",
     "slate-react": "catalog:integrations",
+    "tailwind-merge": "catalog:integrations",
     "type-fest": "catalog:integrations",
     "zustand": "catalog:integrations"
   }

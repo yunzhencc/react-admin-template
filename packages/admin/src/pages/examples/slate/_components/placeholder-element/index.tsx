@@ -27,13 +27,13 @@ export function PlaceholderElement(props: RenderElementProps) {
   return (
     <span
       {...attributes}
-      className="slot-container"
+      className="mx-1 my-0.5 cursor-text rounded bg-slot-bg px-1.5 py-0.5 font-semibold leading-normal text-slot-text break-words"
       onClick={onClick}
     >
       {children}
       {!hasValue && (
         <span
-          className="slot-placeholder"
+          className="h-0 w-0 cursor-text select-none font-normal text-slot-placeholder"
           contentEditable={false}
         >
           {placeholderElement.placeholder}
