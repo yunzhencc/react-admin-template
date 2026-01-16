@@ -27,6 +27,12 @@ catalogs:
     '@tailwindcss/vite':
       specifier: ^4.1.18
       version: 4.1.18
+    '@tanstack/react-router-devtools':
+      specifier: ^1.150.0
+      version: 1.150.0
+    '@tanstack/router-plugin':
+      specifier: ^1.150.0
+      version: 1.150.0
     '@types/node':
       specifier: ^24.10.7
       version: 24.10.7
@@ -127,6 +133,9 @@ catalogs:
     slate-react:
       specifier: ^0.123.0
       version: 0.123.0
+    type-fest:
+      specifier: ^5.4.1
+      version: 5.4.1
     zustand:
       specifier: ^5.0.10
       version: 5.0.10
@@ -157,10 +166,10 @@ importers:
         specifier: catalog:dev
         version: 4.1.18(vite@7.3.1(@types/node@24.10.7)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@tanstack/react-router-devtools':
-        specifier: ^1.150.0
+        specifier: catalog:dev
         version: 1.150.0(@tanstack/react-router@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@tanstack/router-core@1.150.0)(csstype@3.2.3)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@tanstack/router-plugin':
-        specifier: ^1.150.0
+        specifier: catalog:dev
         version: 1.150.0(@tanstack/react-router@1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(vite@7.3.1(@types/node@24.10.7)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@types/node':
         specifier: catalog:dev
@@ -265,7 +274,7 @@ importers:
         specifier: catalog:integrations
         version: 0.123.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(slate-dom@0.123.0(slate@0.123.0))(slate@0.123.0)
       type-fest:
-        specifier: ^5.4.1
+        specifier: catalog:integrations
         version: 5.4.1
       zustand:
         specifier: catalog:integrations
