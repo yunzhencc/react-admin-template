@@ -1,5 +1,5 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router';
+import { createFileRoute, lazyRouteComponent } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/examples/slate')({
-  component: () => <Outlet />,
+  component: lazyRouteComponent(() => import('./views/slate/text-area')),
 });
