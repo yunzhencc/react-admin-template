@@ -5,6 +5,55 @@ settings:
   excludeLinksFromLockfile: false
 
 catalogs:
+  core:
+    '@ant-design/icons':
+      specifier: ^6.1.0
+      version: 6.1.0
+    '@tanstack/react-query':
+      specifier: ^5.90.17
+      version: 5.90.17
+    '@tanstack/react-router':
+      specifier: ^1.150.0
+      version: 1.150.0
+    '@yunzhen/request':
+      specifier: ^1.0.1
+      version: 1.0.1
+    antd:
+      specifier: ^6.2.0
+      version: 6.2.0
+    clsx:
+      specifier: ^2.1.1
+      version: 2.1.1
+    es-toolkit:
+      specifier: ^1.43.0
+      version: 1.43.0
+    motion:
+      specifier: ^12.26.2
+      version: 12.26.2
+    react:
+      specifier: ^19.2.3
+      version: 19.2.3
+    react-dom:
+      specifier: ^19.2.3
+      version: 19.2.3
+    slate:
+      specifier: ^0.123.0
+      version: 0.123.0
+    slate-history:
+      specifier: ^0.113.1
+      version: 0.113.1
+    slate-react:
+      specifier: ^0.123.0
+      version: 0.123.0
+    tailwind-merge:
+      specifier: ^3.4.0
+      version: 3.4.0
+    type-fest:
+      specifier: ^5.4.1
+      version: 5.4.1
+    zustand:
+      specifier: ^5.0.10
+      version: 5.0.10
   dev:
     '@antfu/eslint-config':
       specifier: ^7.0.1
@@ -93,55 +142,6 @@ catalogs:
     vitest:
       specifier: ^4.0.16
       version: 4.0.16
-  integrations:
-    '@ant-design/icons':
-      specifier: ^6.1.0
-      version: 6.1.0
-    '@tanstack/react-query':
-      specifier: ^5.90.17
-      version: 5.90.17
-    '@tanstack/react-router':
-      specifier: ^1.150.0
-      version: 1.150.0
-    '@yunzhen/request':
-      specifier: ^1.0.1
-      version: 1.0.1
-    antd:
-      specifier: ^6.2.0
-      version: 6.2.0
-    clsx:
-      specifier: ^2.1.1
-      version: 2.1.1
-    es-toolkit:
-      specifier: ^1.43.0
-      version: 1.43.0
-    motion:
-      specifier: ^12.26.2
-      version: 12.26.2
-    react:
-      specifier: ^19.2.3
-      version: 19.2.3
-    react-dom:
-      specifier: ^19.2.3
-      version: 19.2.3
-    slate:
-      specifier: ^0.123.0
-      version: 0.123.0
-    slate-history:
-      specifier: ^0.113.1
-      version: 0.113.1
-    slate-react:
-      specifier: ^0.123.0
-      version: 0.123.0
-    tailwind-merge:
-      specifier: ^3.4.0
-      version: 3.4.0
-    type-fest:
-      specifier: ^5.4.1
-      version: 5.4.1
-    zustand:
-      specifier: ^5.0.10
-      version: 5.0.10
 
 importers:
 
@@ -238,52 +238,52 @@ importers:
   packages/admin:
     dependencies:
       '@ant-design/icons':
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@tanstack/react-query':
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 5.90.17(react@19.2.3)
       '@tanstack/react-router':
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 1.150.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@yunzhen/request':
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 1.0.1
       antd:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 6.2.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       clsx:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 2.1.1
       es-toolkit:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 1.43.0
       motion:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 12.26.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 19.2.3
       react-dom:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 19.2.3(react@19.2.3)
       slate:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 0.123.0
       slate-history:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 0.113.1(slate@0.123.0)
       slate-react:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 0.123.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(slate-dom@0.123.0(slate@0.123.0))(slate@0.123.0)
       tailwind-merge:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 3.4.0
       type-fest:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 5.4.1
       zustand:
-        specifier: catalog:integrations
+        specifier: catalog:core
         version: 5.0.10(@types/react@19.2.8)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))
 
 packages:

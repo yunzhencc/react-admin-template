@@ -9,21 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "catalog:integrations",
-    "@tanstack/react-query": "catalog:integrations",
-    "@tanstack/react-router": "catalog:integrations",
-    "@yunzhen/request": "catalog:integrations",
-    "antd": "catalog:integrations",
-    "clsx": "catalog:integrations",
-    "es-toolkit": "catalog:integrations",
-    "motion": "catalog:integrations",
-    "react": "catalog:integrations",
-    "react-dom": "catalog:integrations",
-    "slate": "catalog:integrations",
-    "slate-history": "catalog:integrations",
-    "slate-react": "catalog:integrations",
-    "tailwind-merge": "catalog:integrations",
-    "type-fest": "catalog:integrations",
-    "zustand": "catalog:integrations"
+    "@ant-design/icons": "catalog:core",
+    "@tanstack/react-query": "catalog:core",
+    "@tanstack/react-router": "catalog:core",
+    "@yunzhen/request": "catalog:core",
+    "antd": "catalog:core",
+    "clsx": "catalog:core",
+    "es-toolkit": "catalog:core",
+    "motion": "catalog:core",
+    "react": "catalog:core",
+    "react-dom": "catalog:core",
+    "slate": "catalog:core",
+    "slate-history": "catalog:core",
+    "slate-react": "catalog:core",
+    "tailwind-merge": "catalog:core",
+    "type-fest": "catalog:core",
+    "zustand": "catalog:core"
   }
 }
