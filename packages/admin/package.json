@@ -1,18 +1,28 @@
 {
   "name": "admin",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "catalog:integrations",
+    "@tanstack/react-query": "catalog:integrations",
+    "@tanstack/react-router": "catalog:integrations",
     "@yunzhen/request": "catalog:integrations",
     "antd": "catalog:integrations",
+    "clsx": "catalog:integrations",
     "es-toolkit": "catalog:integrations",
+    "motion": "catalog:integrations",
     "react": "catalog:integrations",
-    "react-dom": "catalog:integrations"
+    "react-dom": "catalog:integrations",
+    "slate": "catalog:integrations",
+    "slate-history": "catalog:integrations",
+    "slate-react": "catalog:integrations",
+    "type-fest": "catalog:integrations",
+    "zustand": "catalog:integrations"
   }
 }

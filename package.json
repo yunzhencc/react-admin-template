@@ -24,6 +24,8 @@
     "@commitlint/types": "catalog:dev",
     "@eslint-react/eslint-plugin": "catalog:dev",
     "@tailwindcss/vite": "catalog:dev",
+    "@tanstack/react-router-devtools": "catalog:dev",
+    "@tanstack/router-plugin": "catalog:dev",
     "@types/node": "catalog:dev",
     "@types/react": "catalog:dev",
     "@types/react-dom": "catalog:dev",
