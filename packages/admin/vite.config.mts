@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
       tanstackRouter({
         target: 'react',
         routesDirectory: './src/pages',
+        routeFileIgnorePattern: 'components|views|types',
         autoCodeSplitting: true,
       }) as PluginOption,
       react(),
@@ -46,7 +47,6 @@ export default defineConfig(({ mode }) => {
     server: {
       port: Number(env.VITE_DEV_PORT),
       host: true,
-      open: true,
     },
   };
 });

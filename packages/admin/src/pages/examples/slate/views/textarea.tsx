@@ -1,12 +1,12 @@
 import type { Descendant } from 'slate';
 import type { RenderElementProps } from 'slate-react';
-import type { CustomEditor, CustomElement, CustomText } from '../_types';
+import type { CustomEditor, CustomElement, CustomText } from '../types';
 import { Button, Card, Divider, message } from 'antd';
 import * as React from 'react';
 import { createEditor, Editor } from 'slate';
 import { withHistory } from 'slate-history';
 import { DefaultElement, Editable, Slate, withReact } from 'slate-react';
-import { PlaceholderElement } from '../_components';
+import { PlaceholderElement } from '../components';
 
 declare module 'slate' {
   interface CustomTypes {

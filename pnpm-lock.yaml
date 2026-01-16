@@ -133,6 +133,9 @@ catalogs:
     slate-react:
       specifier: ^0.123.0
       version: 0.123.0
+    tailwind-merge:
+      specifier: ^3.4.0
+      version: 3.4.0
     type-fest:
       specifier: ^5.4.1
       version: 5.4.1
@@ -274,7 +277,7 @@ importers:
         specifier: catalog:integrations
         version: 0.123.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(slate-dom@0.123.0(slate@0.123.0))(slate@0.123.0)
       tailwind-merge:
-        specifier: ^3.4.0
+        specifier: catalog:integrations
         version: 3.4.0
       type-fest:
         specifier: catalog:integrations
