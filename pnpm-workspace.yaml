@@ -1,22 +1,23 @@
 shellEmulator: true
 
 trustPolicy: no-downgrade
+
 trustPolicyExclude:
   - semver@6.3.1
-
 packages:
   - apps/*
   - packages/*
-
 catalogs:
   core:
     '@ant-design/icons': ^6.1.0
+    '@lexical/react': ^0.39.0
     '@tanstack/react-query': ^5.90.17
     '@tanstack/react-router': ^1.150.0
     '@yunzhen/request': ^1.0.1
     antd: ^6.2.0
     clsx: ^2.1.1
     es-toolkit: ^1.43.0
+    lexical: ^0.39.0
     motion: ^12.26.2
     react: ^19.2.3
     react-dom: ^19.2.3
