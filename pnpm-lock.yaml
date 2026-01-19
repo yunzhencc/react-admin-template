@@ -18,6 +18,12 @@ catalogs:
     '@lexical/react':
       specifier: ^0.39.0
       version: 0.39.0
+    '@lexical/rich-text':
+      specifier: ^0.39.0
+      version: 0.39.0
+    '@lexical/selection':
+      specifier: ^0.39.0
+      version: 0.39.0
     '@lexical/utils':
       specifier: ^0.39.0
       version: 0.39.0
@@ -267,6 +273,12 @@ importers:
       '@lexical/react':
         specifier: catalog:core
         version: 0.39.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(yjs@13.6.29)
+      '@lexical/rich-text':
+        specifier: catalog:core
+        version: 0.39.0
+      '@lexical/selection':
+        specifier: catalog:core
+        version: 0.39.0
       '@lexical/utils':
         specifier: catalog:core
         version: 0.39.0

@@ -5,16 +5,23 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
+import { HeadingNode } from '@lexical/rich-text';
 import { Divider } from 'antd';
 import { ToolbarPlugin } from './plugins/toolbar';
 import './index.css';
 
 const theme = {
   text: {
-    bold: 'editor-text-bold',
-    italic: 'editor-text-italic',
-    strikethrough: 'editor-text-strikethrough',
-    underline: 'editor-text-underline',
+    bold: 'font-bold',
+    italic: 'italic',
+    underline: 'underline',
+    strikethrough: 'line-through',
+    underlineStrikethrough: 'underline line-through',
+  },
+  heading: {
+    h1: 'text-3xl font-bold mt-3',
+    h2: 'text-2xl font-bold mt-3',
+    h3: 'text-xl font-bold mt-3',
   },
 };
 
@@ -27,6 +34,7 @@ export function Editor() {
     namespace: 'MyEditor',
     theme,
     onError,
+    nodes: [HeadingNode],
   };
 
   return (

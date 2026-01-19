@@ -1,3 +1,4 @@
+import type { HeadingTagType } from '@lexical/rich-text';
 import {
   BoldOutlined,
   ItalicOutlined,
@@ -7,9 +8,12 @@ import {
   UndoOutlined,
 } from '@ant-design/icons';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text';
+import { $setBlocksType } from '@lexical/selection';
 import { mergeRegister } from '@lexical/utils';
-import { Button, Divider } from 'antd';
+import { Button, Divider, Select } from 'antd';
 import {
+  $createParagraphNode,
   $getSelection,
   $isRangeSelection,
   CAN_REDO_COMMAND,
@@ -22,6 +26,13 @@ import {
 } from 'lexical';
 import * as React from 'react';
 
+const blockTypeToBlockName = {
+  paragraph: '正文',
+  h1: '一级标题',
+  h2: '二级标题',
+  h3: '三级标题',
+};
+
 export function ToolbarPlugin() {
   const [editor] = useLexicalComposerContext();
   const toolbarRef = React.useRef(null);
@@ -31,6 +42,7 @@ export function ToolbarPlugin() {
   const [isItalic, setIsItalic] = React.useState(false);
   const [isUnderline, setIsUnderline] = React.useState(false);
   const [isStrikethrough, setIsStrikethrough] = React.useState(false);
+  const [blockType, setBlockType] = React.useState<keyof typeof blockTypeToBlockName>('paragraph');
 
   const $updateToolbar = React.useCallback(
     () => {
@@ -42,9 +54,26 @@ export function ToolbarPlugin() {
         setIsItalic(selection.hasFormat('italic'));
         setIsUnderline(selection.hasFormat('underline'));
         setIsStrikethrough(selection.hasFormat('strikethrough'));
+
+        // Update block type
+        const anchorNode = selection.anchor.getNode();
+        const element = anchorNode.getKey() === 'root'
+          ? anchorNode
+          : anchorNode.getTopLevelElementOrThrow();
+        const elementKey = element.getKey();
+        const elementDOM = editor.getElementByKey(elementKey);
+
+        if (elementDOM !== null) {
+          if ($isHeadingNode(element)) {
+            setBlockType(element.getTag() as keyof typeof blockTypeToBlockName);
+          }
+          else {
+            setBlockType('paragraph');
+          }
+        }
       }
     },
-    [],
+    [editor],
   );
 
   React.useEffect(
@@ -87,6 +116,28 @@ export function ToolbarPlugin() {
     [editor, $updateToolbar],
   );
 
+  const formatHeading = (headingSize: HeadingTagType) => {
+    if (blockType !== headingSize) {
+      editor.update(() => {
+        const selection = $getSelection();
+        if ($isRangeSelection(selection)) {
+          $setBlocksType(selection, () => $createHeadingNode(headingSize));
+        }
+      });
+    }
+  };
+
+  const formatParagraph = () => {
+    if (blockType !== 'paragraph') {
+      editor.update(() => {
+        const selection = $getSelection();
+        if ($isRangeSelection(selection)) {
+          $setBlocksType(selection, () => $createParagraphNode());
+        }
+      });
+    }
+  };
+
   return (
     <div ref={toolbarRef} className="flex h-12 items-center justify-center gap-2.5">
       <Button
@@ -112,6 +163,24 @@ export function ToolbarPlugin() {
         aria-label="Redo"
       />
       <Divider orientation="vertical" className="m-0" />
+      <Select
+        value={blockType}
+        variant="borderless"
+        size="small"
+        className="w-24"
+        onChange={(value) => {
+          if (value === 'paragraph') {
+            formatParagraph();
+          }
+          else {
+            formatHeading(value as HeadingTagType);
+          }
+        }}
+        options={Object.entries(blockTypeToBlockName).map(([value, label]) => ({
+          value,
+          label,
+        }))}
+      />
       <Button
         type="text"
         size="small"
@@ -119,7 +188,7 @@ export function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');
         }}
-        className={isBold ? 'bg-[var(--ant-btn-bg-color-hover)]' : ''}
+        className={isBold ? 'bg-(--ant-btn-bg-color-hover)' : ''}
         aria-label="Format Bold"
       />
       <Button
@@ -129,8 +198,8 @@ export function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic');
         }}
-        className={isItalic ? 'bg-[var(--ant-btn-bg-color-hover)]' : ''}
-        aria-label="Format Italics"
+        className={isItalic ? 'bg-(--ant-btn-bg-color-hover)' : ''}
+        aria-label="Format Italic"
       />
       <Button
         type="text"
@@ -139,7 +208,7 @@ export function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline');
         }}
-        className={isUnderline ? 'bg-[var(--ant-btn-bg-color-hover)]' : ''}
+        className={isUnderline ? 'bg-(--ant-btn-bg-color-hover)' : ''}
         aria-label="Format Underline"
       />
       <Button
@@ -149,7 +218,7 @@ export function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough');
         }}
-        className={isStrikethrough ? 'bg-[var(--ant-btn-bg-color-hover)]' : ''}
+        className={isStrikethrough ? 'bg-(--ant-btn-bg-color-hover)' : ''}
         aria-label="Format Strikethrough"
       />
     </div>
