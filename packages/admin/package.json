@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "catalog:core",
+    "@excalidraw/excalidraw": "catalog:core",
     "@lexical/react": "catalog:core",
     "@tanstack/react-query": "catalog:core",
     "@tanstack/react-router": "catalog:core",
@@ -25,6 +26,7 @@
     "slate-history": "catalog:core",
     "slate-react": "catalog:core",
     "tailwind-merge": "catalog:core",
+    "tldraw": "catalog:core",
     "type-fest": "catalog:core",
     "zustand": "catalog:core"
   }
