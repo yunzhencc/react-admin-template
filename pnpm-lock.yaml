@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   core:
+    '@ant-design/cssinjs':
+      specifier: ^2.0.3
+      version: 2.0.3
     '@ant-design/icons':
       specifier: ^6.1.0
       version: 6.1.0
@@ -13,6 +16,9 @@ catalogs:
       specifier: ^0.18.0
       version: 0.18.0
     '@lexical/react':
+      specifier: ^0.39.0
+      version: 0.39.0
+    '@lexical/utils':
       specifier: ^0.39.0
       version: 0.39.0
     '@tanstack/react-query':
@@ -249,6 +255,9 @@ importers:
 
   packages/admin:
     dependencies:
+      '@ant-design/cssinjs':
+        specifier: catalog:core
+        version: 2.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@ant-design/icons':
         specifier: catalog:core
         version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -258,6 +267,9 @@ importers:
       '@lexical/react':
         specifier: catalog:core
         version: 0.39.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(yjs@13.6.29)
+      '@lexical/utils':
+        specifier: catalog:core
+        version: 0.39.0
       '@tanstack/react-query':
         specifier: catalog:core
         version: 5.90.17(react@19.2.3)

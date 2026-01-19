@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "catalog:core",
     "@ant-design/icons": "catalog:core",
     "@excalidraw/excalidraw": "catalog:core",
     "@lexical/react": "catalog:core",
+    "@lexical/utils": "catalog:core",
     "@tanstack/react-query": "catalog:core",
     "@tanstack/react-router": "catalog:core",
     "@yunzhen/request": "catalog:core",
