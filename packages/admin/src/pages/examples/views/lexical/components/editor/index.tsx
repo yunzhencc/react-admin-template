@@ -7,6 +7,7 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { HeadingNode } from '@lexical/rich-text';
 import { Divider } from 'antd';
+import { FloatingToolbarPlugin } from './plugins/floating-toolbar';
 import { ToolbarPlugin } from './plugins/toolbar';
 
 const theme = {
@@ -51,6 +52,7 @@ export function Editor() {
         />
         <HistoryPlugin />
         <AutoFocusPlugin />
+        <FloatingToolbarPlugin />
       </div>
     </LexicalComposer>
   );
