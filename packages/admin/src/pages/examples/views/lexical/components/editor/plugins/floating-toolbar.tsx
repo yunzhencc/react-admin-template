@@ -1,6 +1,8 @@
 import type { LexicalEditor } from 'lexical';
+import { CopyFilled } from '@ant-design/icons';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
+import { Button, Divider, message, Tooltip } from 'antd';
 import { COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
@@ -87,6 +89,18 @@ function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
     );
   }, [editor, updateFloatingToolbar]);
 
+  const handleCopy = () => {
+    const selection = window.getSelection();
+    if (selection) {
+      const text = selection.toString();
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          message.success('复制成功');
+        });
+      }
+    }
+  };
+
   return (
     <div
       ref={popupCharStylesEditorRef}
@@ -97,6 +111,19 @@ function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
         pointerEvents: 'none',
       }}
     >
+      <Tooltip title="复制" arrow={false}>
+        <Button
+          type="text"
+          size="small"
+          icon={<CopyFilled />}
+          onClick={handleCopy}
+          className="gap-1 px-1"
+          aria-label="Copy"
+        >
+          复制
+        </Button>
+      </Tooltip>
+      <Divider orientation="vertical" className="m-0" />
       <ToolbarItems editor={editor} {...toolbarState} showDivider={false} />
     </div>
   );
