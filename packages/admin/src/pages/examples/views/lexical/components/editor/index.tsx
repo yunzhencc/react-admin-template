@@ -7,8 +7,16 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { Divider } from 'antd';
 import { ToolbarPlugin } from './plugins/toolbar';
+import './index.css';
 
-const theme = {};
+const theme = {
+  text: {
+    bold: 'editor-text-bold',
+    italic: 'editor-text-italic',
+    strikethrough: 'editor-text-strikethrough',
+    underline: 'editor-text-underline',
+  },
+};
 
 const onError: InitialConfigType['onError'] = (error) => {
   console.error(error);
