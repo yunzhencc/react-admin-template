@@ -27,10 +27,10 @@ import {
 import * as React from 'react';
 
 const blockTypeToBlockName = {
-  paragraph: '正文',
-  h1: '一级标题',
-  h2: '二级标题',
-  h3: '三级标题',
+  paragraph: { label: '正文', short: 'T' },
+  h1: { label: '一级标题', short: 'H1' },
+  h2: { label: '二级标题', short: 'H2' },
+  h3: { label: '三级标题', short: 'H3' },
 };
 
 export function ToolbarPlugin() {
@@ -167,7 +167,13 @@ export function ToolbarPlugin() {
         value={blockType}
         variant="borderless"
         size="small"
-        className="w-24"
+        className="w-14"
+        popupMatchSelectWidth={false}
+        classNames={{
+          popup: {
+            root: 'min-w-30',
+          },
+        }}
         onChange={(value) => {
           if (value === 'paragraph') {
             formatParagraph();
@@ -176,10 +182,17 @@ export function ToolbarPlugin() {
             formatHeading(value as HeadingTagType);
           }
         }}
-        options={Object.entries(blockTypeToBlockName).map(([value, label]) => ({
+        options={Object.entries(blockTypeToBlockName).map(([value, { label, short }]) => ({
           value,
-          label,
+          label: (
+            <div className="flex justify-between gap-4">
+              <span>{label}</span>
+              <span className="text-gray-400">{short}</span>
+            </div>
+          ),
+          short,
         }))}
+        optionLabelProp="short"
       />
       <Button
         type="text"

@@ -1,7 +1,7 @@
 import type { RenderElementProps } from 'slate-react';
 import type {
   PlaceholderElement as PlaceholderElementType,
-} from '../../types/slate';
+} from '../../types';
 import { Editor, Transforms } from 'slate';
 import { ReactEditor, useSlateStatic } from 'slate-react';
 

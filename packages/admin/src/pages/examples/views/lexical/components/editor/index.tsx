@@ -8,7 +8,6 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { HeadingNode } from '@lexical/rich-text';
 import { Divider } from 'antd';
 import { ToolbarPlugin } from './plugins/toolbar';
-import './index.css';
 
 const theme = {
   text: {
