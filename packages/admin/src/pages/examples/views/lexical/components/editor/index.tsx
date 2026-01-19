@@ -6,7 +6,7 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { HeadingNode } from '@lexical/rich-text';
-import { Divider } from 'antd';
+import { Divider, message } from 'antd';
 import { FloatingToolbarPlugin } from './plugins/floating-toolbar';
 import { ToolbarPlugin } from './plugins/toolbar';
 
@@ -52,7 +52,7 @@ export function Editor() {
         />
         <HistoryPlugin />
         <AutoFocusPlugin />
-        <FloatingToolbarPlugin />
+        <FloatingToolbarPlugin onQuote={(text) => { message.info(`引用的文案为：${text}`); }} />
       </div>
     </LexicalComposer>
   );

@@ -1,5 +1,5 @@
 import type { LexicalEditor } from 'lexical';
-import { CopyFilled } from '@ant-design/icons';
+import { CommentOutlined, CopyFilled } from '@ant-design/icons';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
 import { Button, Divider, message, Tooltip } from 'antd';
@@ -9,7 +9,13 @@ import { createPortal } from 'react-dom';
 import { useToolbar } from '../hooks/use-toolbar';
 import { ToolbarItems } from './toolbar-items';
 
-function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
+function FloatingToolbar({
+  editor,
+  onQuote,
+}: {
+  editor: LexicalEditor;
+  onQuote?: (text: string) => void;
+}) {
   const popupCharStylesEditorRef = React.useRef<HTMLDivElement>(null);
   const toolbarState = useToolbar(editor);
   const { updateToolbar } = toolbarState;
@@ -101,6 +107,16 @@ function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
     }
   };
 
+  const handleQuote = () => {
+    const selection = window.getSelection();
+    if (selection) {
+      const text = selection.toString();
+      if (text && onQuote) {
+        onQuote(text);
+      }
+    }
+  };
+
   return (
     <div
       ref={popupCharStylesEditorRef}
@@ -111,6 +127,18 @@ function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
         pointerEvents: 'none',
       }}
     >
+      <Tooltip title="引用" arrow={false}>
+        <Button
+          type="text"
+          size="small"
+          icon={<CommentOutlined />}
+          onClick={handleQuote}
+          className="gap-1 px-1"
+          aria-label="Quote"
+        >
+          引用
+        </Button>
+      </Tooltip>
       <Tooltip title="复制" arrow={false}>
         <Button
           type="text"
@@ -131,12 +159,14 @@ function FloatingToolbar({ editor }: { editor: LexicalEditor }) {
 
 export function FloatingToolbarPlugin({
   anchorElem = document.body,
+  onQuote,
 }: {
   anchorElem?: HTMLElement;
+  onQuote?: (text: string) => void;
 }) {
   const [editor] = useLexicalComposerContext();
   return createPortal(
-    <FloatingToolbar editor={editor} />,
+    <FloatingToolbar editor={editor} onQuote={onQuote} />,
     anchorElem,
   );
 }
