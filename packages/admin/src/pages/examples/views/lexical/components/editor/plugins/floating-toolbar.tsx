@@ -3,7 +3,7 @@ import { CommentOutlined, CopyFilled } from '@ant-design/icons';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
 import { Button, Divider, message, Tooltip } from 'antd';
-import { COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical';
+import { BLUR_COMMAND, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { useToolbar } from '../hooks/use-toolbar';
@@ -20,48 +20,56 @@ function FloatingToolbar({
   const toolbarState = useToolbar(editor);
   const { updateToolbar } = toolbarState;
 
-  const updateFloatingToolbar = React.useCallback(() => {
-    updateToolbar();
-
-    const selection = window.getSelection();
-    const rootElement = editor.getRootElement();
-
-    if (
-      selection === null
-      || selection.isCollapsed
-      || rootElement === null
-      || !rootElement.contains(selection.anchorNode)
-    ) {
-      if (popupCharStylesEditorRef.current) {
-        popupCharStylesEditorRef.current.style.opacity = '0';
-        popupCharStylesEditorRef.current.style.transform = 'translate(-50%, 10px) scale(0.95)';
-        popupCharStylesEditorRef.current.style.pointerEvents = 'none';
-      }
-      return;
-    }
-
-    const domRange = selection.getRangeAt(0);
-    let rect;
-
-    if (selection.anchorNode === rootElement) {
-      let inner = rootElement.firstChild;
-      while (inner && inner.nextSibling) {
-        inner = inner.nextSibling;
-      }
-      rect = inner ? (inner as HTMLElement).getBoundingClientRect() : rootElement.getBoundingClientRect();
-    }
-    else {
-      rect = domRange.getBoundingClientRect();
-    }
-
+  const hideFloatingToolbar = React.useCallback(() => {
     if (popupCharStylesEditorRef.current) {
-      popupCharStylesEditorRef.current.style.opacity = '1';
-      popupCharStylesEditorRef.current.style.transform = 'translate(-50%, -100%) scale(1)';
-      popupCharStylesEditorRef.current.style.pointerEvents = 'auto';
-      popupCharStylesEditorRef.current.style.left = `${rect.left + rect.width / 2}px`;
-      popupCharStylesEditorRef.current.style.top = `${rect.top - 10}px`;
+      popupCharStylesEditorRef.current.style.opacity = '0';
+      popupCharStylesEditorRef.current.style.transform = 'translate(-50%, 10px) scale(0.95)';
+      popupCharStylesEditorRef.current.style.pointerEvents = 'none';
     }
-  }, [editor, updateToolbar]);
+  }, []);
+
+  const updateFloatingToolbar = React.useCallback(
+    () => {
+      updateToolbar();
+
+      const selection = window.getSelection();
+      const rootElement = editor.getRootElement();
+
+      if (
+        selection === null
+        || selection.isCollapsed
+        || selection.toString().trim() === ''
+        || rootElement === null
+        || !rootElement.contains(selection.anchorNode)
+      ) {
+        hideFloatingToolbar();
+        return;
+      }
+
+      const domRange = selection.getRangeAt(0);
+      let rect;
+
+      if (selection.anchorNode === rootElement) {
+        let inner = rootElement.firstChild;
+        while (inner && inner.nextSibling) {
+          inner = inner.nextSibling;
+        }
+        rect = inner ? (inner as HTMLElement).getBoundingClientRect() : rootElement.getBoundingClientRect();
+      }
+      else {
+        rect = domRange.getBoundingClientRect();
+      }
+
+      if (popupCharStylesEditorRef.current) {
+        popupCharStylesEditorRef.current.style.opacity = '1';
+        popupCharStylesEditorRef.current.style.transform = 'translate(-50%, -100%) scale(1)';
+        popupCharStylesEditorRef.current.style.pointerEvents = 'auto';
+        popupCharStylesEditorRef.current.style.left = `${rect.left + rect.width / 2}px`;
+        popupCharStylesEditorRef.current.style.top = `${rect.top - 10}px`;
+      }
+    },
+    [editor, updateToolbar, hideFloatingToolbar],
+  );
 
   React.useEffect(() => {
     const onResize = () => {
@@ -92,8 +100,24 @@ function FloatingToolbar({
         },
         COMMAND_PRIORITY_LOW,
       ),
+      editor.registerCommand(
+        BLUR_COMMAND,
+        (payload) => {
+          const relatedTarget = payload.relatedTarget as HTMLElement;
+          if (
+            popupCharStylesEditorRef.current
+            && (popupCharStylesEditorRef.current === relatedTarget
+              || popupCharStylesEditorRef.current.contains(relatedTarget))
+          ) {
+            return false;
+          }
+          hideFloatingToolbar();
+          return false;
+        },
+        COMMAND_PRIORITY_LOW,
+      ),
     );
-  }, [editor, updateFloatingToolbar]);
+  }, [editor, updateFloatingToolbar, hideFloatingToolbar]);
 
   const handleCopy = () => {
     const selection = window.getSelection();
