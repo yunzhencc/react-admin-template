@@ -4,6 +4,7 @@ import process from 'node:process';
 import tailwindcss from '@tailwindcss/vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
+import { bundleStats } from 'rollup-plugin-bundle-stats';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv } from 'vite';
 
@@ -34,6 +35,10 @@ export default defineConfig(({ mode }) => {
     }));
   }
 
+  if (env.VITE_DEV_BUNDLE_STATS === 'true') {
+    plugins.push(bundleStats());
+  }
+
   return {
     resolve: {
       alias: {
@@ -61,6 +66,13 @@ export default defineConfig(({ mode }) => {
     server: {
       port: Number(env.VITE_DEV_PORT),
       host: true,
+      // proxy: {
+      //   '/api': {
+      //     target: env.VITE_DEV_API_BASE_URL,
+      //     changeOrigin: true,
+      //     rewrite: path => path.replace(/^\/api/, ''),
+      //   },
+      // },
     },
   };
 });
