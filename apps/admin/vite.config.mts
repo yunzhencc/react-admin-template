@@ -1,15 +1,38 @@
-import type { PluginOption } from 'vite';
+import type { UserConfig } from 'vite';
 import path from 'node:path';
+import process from 'node:process';
 import tailwindcss from '@tailwindcss/vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv } from 'vite';
 
 const envPrefix = ['VITE_'];
+const analyze = process.env.ANALYZE;
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname, envPrefix);
+
+  const plugins: UserConfig['plugins'] = [
+    tanstackRouter({
+      target: 'react',
+      routesDirectory: './src/pages',
+      routeFileIgnorePattern: 'components|views|types',
+      autoCodeSplitting: true,
+    }),
+    react(),
+    tailwindcss(),
+  ];
+
+  if (analyze) {
+    plugins.push(visualizer({
+      gzipSize: true,
+      brotliSize: true,
+      emitFile: false,
+      open: true,
+    }));
+  }
 
   return {
     resolve: {
@@ -18,16 +41,7 @@ export default defineConfig(({ mode }) => {
       },
     },
 
-    plugins: [
-      tanstackRouter({
-        target: 'react',
-        routesDirectory: './src/pages',
-        routeFileIgnorePattern: 'components|views|types',
-        autoCodeSplitting: true,
-      }) as PluginOption,
-      react(),
-      tailwindcss(),
-    ],
+    plugins,
 
     build: {
       rollupOptions: {
