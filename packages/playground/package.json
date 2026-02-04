@@ -1,0 +1,14 @@
+{
+  "name": "@yunzhen/playground",
+  "version": "1.0.0",
+  "keywords": [],
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "dependencies": {
+    "antd": "catalog:core",
+    "slate": "catalog:core",
+    "slate-history": "catalog:core",
+    "slate-react": "catalog:core"
+  }
+}

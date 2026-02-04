@@ -18,6 +18,7 @@
     "@lexical/utils": "catalog:core",
     "@tanstack/react-query": "catalog:core",
     "@tanstack/react-router": "catalog:core",
+    "@yunzhen/playground": "workspace:*",
     "@yunzhen/request": "catalog:core",
     "antd": "catalog:core",
     "clsx": "catalog:core",
