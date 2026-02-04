@@ -11,7 +11,6 @@
   "dependencies": {
     "@ant-design/cssinjs": "catalog:core",
     "@ant-design/icons": "catalog:core",
-    "@excalidraw/excalidraw": "catalog:core",
     "@lexical/react": "catalog:core",
     "@lexical/rich-text": "catalog:core",
     "@lexical/selection": "catalog:core",
