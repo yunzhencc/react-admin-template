@@ -5,8 +5,19 @@
   "imports": {
     "#/*": "./src/*"
   },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "dependencies": {
     "antd": "catalog:core",
+    "react": "catalog:core",
+    "react-dom": "catalog:core",
     "slate": "catalog:core",
     "slate-history": "catalog:core",
     "slate-react": "catalog:core"
