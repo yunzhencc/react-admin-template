@@ -6,12 +6,17 @@ export default antfu({
     indent: 2,
     quotes: 'single',
   },
-  rules: {},
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
   react: true,
   typescript: true,
   ignores: [
     'tsconfig.json',
     'tsconfig.app.json',
-    'tsconfig.node.json'
+    'tsconfig.node.json',
   ],
 });
