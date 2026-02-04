@@ -36,6 +36,7 @@
     "eslint-plugin-react-hooks": "catalog:dev",
     "eslint-plugin-react-refresh": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "rollup-plugin-bundle-stats": "catalog:core",
     "rollup-plugin-visualizer": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "tailwindcss": "catalog:dev",
