@@ -10,7 +10,13 @@
     }
   },
   "dependencies": {
+    "@ant-design/icons": "catalog:core",
+    "@lexical/react": "catalog:core",
+    "@lexical/rich-text": "catalog:core",
+    "@lexical/selection": "catalog:core",
+    "@lexical/utils": "catalog:core",
     "antd": "catalog:core",
+    "lexical": "catalog:core",
     "react": "catalog:core",
     "react-dom": "catalog:core",
     "slate": "catalog:core",
