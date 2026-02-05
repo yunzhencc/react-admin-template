@@ -16,6 +16,7 @@
     "@tanstack/react-router": "catalog:core",
     "@yunzhen/playground": "workspace:*",
     "@yunzhen/request": "catalog:core",
+    "@yunzhen/utils": "workspace:*",
     "antd": "catalog:core",
     "clsx": "catalog:core",
     "es-toolkit": "catalog:core",
