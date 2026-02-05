@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+/* https://tailwindcss.com/docs/detecting-classes-in-source-files */
+@source "../node_modules/@yunzhen/playground";
+
 @theme {
   --color-slot-bg: #5278f568;
   --color-slot-text: #5278f5;
