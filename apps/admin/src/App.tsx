@@ -10,7 +10,7 @@ import './global.css';
 export function App() {
   React.useEffect(
     () => {
-      if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_GRAB) {
+      if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_GRAB === 'true') {
         void import('react-grab');
       }
     },
@@ -18,7 +18,7 @@ export function App() {
   );
 
   React.useEffect(() => {
-    if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_SCAN) {
+    if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_SCAN === 'true') {
       void import('react-scan').then(({ scan }) => {
         scan({ enabled: true });
       });
