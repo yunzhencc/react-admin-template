@@ -2,11 +2,29 @@ import { StyleProvider } from '@ant-design/cssinjs';
 import { RouterProvider } from '@tanstack/react-router';
 import { App as AntApp, ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
+import * as React from 'react';
 import { router } from '@/lib/router';
 import { Providers } from '@/providers';
 import './global.css';
 
 export function App() {
+  React.useEffect(
+    () => {
+      if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_GRAB) {
+        void import('react-grab');
+      }
+    },
+    [],
+  );
+
+  React.useEffect(() => {
+    if (import.meta.env.DEV && import.meta.env.VITE_DEV_REACT_SCAN) {
+      void import('react-scan').then(({ scan }) => {
+        scan({ enabled: true });
+      });
+    }
+  }, []);
+
   return (
     <StyleProvider layer>
       <ConfigProvider locale={zhCN}>
