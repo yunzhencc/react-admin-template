@@ -39,6 +39,8 @@
     "eslint-plugin-react-hooks": "catalog:dev",
     "eslint-plugin-react-refresh": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "react-grab": "catalog:dev",
+    "react-scan": "catalog:dev",
     "rollup-plugin-bundle-stats": "catalog:dev",
     "rollup-plugin-visualizer": "catalog:dev",
     "simple-git-hooks": "catalog:dev",

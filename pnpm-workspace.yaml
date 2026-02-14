@@ -5,6 +5,7 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1
   - mermaid@10.9.3
+  - undici-types@6.21.0
 packages:
   - apps/*
   - packages/*
@@ -57,6 +58,8 @@ catalogs:
     eslint-plugin-react-hooks: ^7.0.1
     eslint-plugin-react-refresh: ^0.4.26
     lint-staged: ^16.2.7
+    react-grab: ^0.1.14
+    react-scan: ^0.4.3
     rollup-plugin-bundle-stats: ^4.21.9
     rollup-plugin-visualizer: ^6.0.5
     simple-git-hooks: ^2.13.1
