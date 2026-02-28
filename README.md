@@ -15,3 +15,21 @@ pnpm install
 # 启动开发服务器
 pnpm start
 ```
+
+## 安装依赖
+
+### 应用依赖
+
+切换到需要安装依赖的应用目录下，执行以下命令安装依赖：
+
+```sh
+pnpm add antd --save-catalog-name core
+```
+
+### 开发依赖
+
+在项目根目录下，执行以下命令安装依赖：
+
+```sh
+pnpm add vite --save-catalog-name dev
+```
