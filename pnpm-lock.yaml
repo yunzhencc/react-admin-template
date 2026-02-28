@@ -12,6 +12,15 @@ catalogs:
     '@ant-design/icons':
       specifier: 6.1.0
       version: 6.1.0
+    '@atlaskit/pragmatic-drag-and-drop':
+      specifier: ^1.7.7
+      version: 1.7.7
+    '@atlaskit/pragmatic-drag-and-drop-auto-scroll':
+      specifier: ^2.1.5
+      version: 2.1.5
+    '@atlaskit/pragmatic-drag-and-drop-flourish':
+      specifier: ^2.0.12
+      version: 2.0.12
     '@lexical/react':
       specifier: 0.40.0
       version: 0.40.0
@@ -30,6 +39,9 @@ catalogs:
     '@tanstack/react-router':
       specifier: 1.158.0
       version: 1.158.0
+    '@tanstack/react-virtual':
+      specifier: ^3.13.19
+      version: 3.13.19
     '@yunzhen/request':
       specifier: 1.0.1
       version: 1.0.1
@@ -357,6 +369,15 @@ importers:
       '@ant-design/icons':
         specifier: catalog:core
         version: 6.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/pragmatic-drag-and-drop':
+        specifier: catalog:core
+        version: 1.7.7
+      '@atlaskit/pragmatic-drag-and-drop-auto-scroll':
+        specifier: catalog:core
+        version: 2.1.5
+      '@atlaskit/pragmatic-drag-and-drop-flourish':
+        specifier: catalog:core
+        version: 2.0.12(@types/react@19.2.11)(react@19.2.4)
       '@lexical/react':
         specifier: catalog:core
         version: 0.40.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(yjs@13.6.29)
@@ -369,6 +390,9 @@ importers:
       '@lexical/utils':
         specifier: catalog:core
         version: 0.40.0
+      '@tanstack/react-virtual':
+        specifier: catalog:core
+        version: 3.13.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       antd:
         specifier: catalog:core
         version: 6.2.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -568,6 +592,41 @@ packages:
   '@ast-grep/napi@0.37.0':
     resolution: {integrity: sha512-Hb4o6h1Pf6yRUAX07DR4JVY7dmQw+RVQMW5/m55GoiAT/VRoKCWBtIUPPOnqDVhbx1Cjfil9b6EDrgJsUAujEQ==}
     engines: {node: '>= 10'}
+
+  '@atlaskit/atlassian-context@0.6.0':
+    resolution: {integrity: sha512-TjaV1OIjP8DaOyaqzPI5OkYvVckn3hYwE92v8RcdnpOiMKI0taedg1sLXD7x0nPx5MtXPmCJNNVJJprDN7pmxQ==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/ds-lib@5.3.0':
+    resolution: {integrity: sha512-j3DLHqBACSJsG3XqSgCIwZqvJhYkpSC8i+24n/JYCRjIxYEJMsuSXOtdeu0qBajREwgzmAFP6AVfVZh1zAWG/A==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/feature-gate-js-client@5.5.8':
+    resolution: {integrity: sha512-EpYMt1yWc/dnSc/B8t1EhKSiDI5T9wTSioxMeDTb1SDmTDga3F8dX/K3DneI1PUCmzt4g7ejMSmJ5swtuRxsRA==}
+
+  '@atlaskit/motion@5.3.11':
+    resolution: {integrity: sha512-i5252cCrnFj2xbVINQbBuPRVEYv99MyozlZPXa8A4JHvbfx8siQQK2R3bO1F/Jl9M/eBW9E/JPa8HTl8zVS0Tw==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/platform-feature-flags@1.1.3':
+    resolution: {integrity: sha512-dRn6UvVmMF5+WXnv7ZlxKTV2rVQncI2TgM0KTGSqpHdD9LnogITWC/rFjzUuF/W8MBCEvpouGilukqhq6rASnw==}
+
+  '@atlaskit/pragmatic-drag-and-drop-auto-scroll@2.1.5':
+    resolution: {integrity: sha512-InLvVhZAHPBfv3CxuG4AfOQuhNJjaFy69YBfodPMWtRFQNQAKa9Yb3vL9Ho6qsD9qKUBuJa4A5k7QddaXQ4Eyw==}
+
+  '@atlaskit/pragmatic-drag-and-drop-flourish@2.0.12':
+    resolution: {integrity: sha512-px5JRWKVyaNFf6mwqZnQRIJWwBjX4tW3URfc1xxBXl4rhax3M9dZyKrV7BNQEumzEyKXNFIR1sJBQfD25lXnwg==}
+
+  '@atlaskit/pragmatic-drag-and-drop@1.7.7':
+    resolution: {integrity: sha512-jX+68AoSTqO/fhCyJDTZ38Ey6/wyL2Iq+J/moanma0YyktpnoHxevjY1UNJHYp0NCburdQDZSL1ZFac1mO1osQ==}
+
+  '@atlaskit/tokens@11.0.1':
+    resolution: {integrity: sha512-3W9TncNs3TKQmJXSm2oIBoLhh9FnudLKHspT/NxlHWkVEqSWZX0gAbECMbH9wVItgaK+zqo5DyxqAPUtGRdCWg==}
+    peerDependencies:
+      react: ^18.2.0
 
   '@babel/code-frame@7.28.6':
     resolution: {integrity: sha512-JYgintcMjRiCvS8mMECzaEn+m3PfoQiyqukOMCCVQtoJGYJw8j/8LBJEiqkHLkfwCcs74E3pbAUFNg7d9VNJ+Q==}
@@ -852,6 +911,11 @@ packages:
   '@commitlint/types@20.4.0':
     resolution: {integrity: sha512-aO5l99BQJ0X34ft8b0h7QFkQlqxC6e7ZPVmBKz13xM9O8obDaM1Cld4sQlJDXXU/VFuUzQ30mVtHjVz74TuStw==}
     engines: {node: '>=v18'}
+
+  '@compiled/react@0.18.6':
+    resolution: {integrity: sha512-Mt6sJOwykeoToEBFbOUNR4xABi2gOr/+X5QSGqGEYiCBMh+XPDAclG2UX94zveiYJXO4AUJIQBCVwa4/lwPMBA==}
+    peerDependencies:
+      react: '>= 16.12.0'
 
   '@dprint/formatter@0.5.1':
     resolution: {integrity: sha512-cdZUrm0iv/FnnY3CKE2dEcVhNEzrC551aE2h2mTFwQCRBrqyARLDnb7D+3PlXTUVp3s34ftlnGOVCmhLT9DeKA==}
@@ -2883,6 +2947,12 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
+  '@statsig/client-core@3.32.0':
+    resolution: {integrity: sha512-/cVPhFt4uvbhK9pI0ju8Ko4ZiJqc5paG9DoYZCtdy79ChA5LJ2gEo6L8qAvOfXQ9huYSSrwaFpv/29oJfXlEiw==}
+
+  '@statsig/js-client@3.32.0':
+    resolution: {integrity: sha512-TNsVTThSKRaRTb1bI5ZxL6lL63TukB2pcYcl4arWUt+8vdzZMlTRgRDFOxe3+vNj1HLSeF1NINWEflGSg7CDzQ==}
+
   '@stylistic/eslint-plugin@5.7.0':
     resolution: {integrity: sha512-PsSugIf9ip1H/mWKj4bi/BlEoerxXAda9ByRFsYuwsmr6af9NxJL0AaiNXs8Le7R21QR5KMiD/KdxZZ71LjAxQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3023,6 +3093,12 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  '@tanstack/react-virtual@3.13.19':
+    resolution: {integrity: sha512-KzwmU1IbE0IvCZSm6OXkS+kRdrgW2c2P3Ho3NC+zZXWK6oObv/L+lcV/2VuJ+snVESRlMJ+w/fg4WXI/JzoNGQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   '@tanstack/router-core@1.158.0':
     resolution: {integrity: sha512-dRMcWY0UB/6OZqSCx/7iUvom0ol18rHSQladygVT8mlth7uxYx3n5BNse8C03efIE8y1Bx+VDOBAKpAZ9BgKog==}
     engines: {node: '>=12'}
@@ -3068,6 +3144,9 @@ packages:
 
   '@tanstack/store@0.8.0':
     resolution: {integrity: sha512-Om+BO0YfMZe//X2z0uLF2j+75nQga6TpTJgLJQBiq85aOyZNIhkCgleNcud2KQg4k4v9Y9l+Uhru3qWMPGTOzQ==}
+
+  '@tanstack/virtual-core@3.13.19':
+    resolution: {integrity: sha512-/BMP7kNhzKOd7wnDeB8NrIRNLwkf5AhCYCvtfZV2GXWbBieFm/el0n6LOAXlTi6ZwHICSNnQcIxRCWHrLzDY+g==}
 
   '@tanstack/virtual-file-routes@1.154.7':
     resolution: {integrity: sha512-cHHDnewHozgjpI+MIVp9tcib6lYEQK5MyUr0ChHpHFGBl8Xei55rohFK0I0ve/GKoHeioaK42Smd8OixPp6CTg==}
@@ -3685,6 +3764,9 @@ packages:
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  bind-event-listener@3.0.0:
+    resolution: {integrity: sha512-PJvH288AWQhKs2v9zyfYdPzlPqf5bXbGMmhmUIY9x4dAUGIWgomO771oBQNwJnMQSnUIXhKu6sgzpBRXTlvb8Q==}
 
   bippy@0.3.34:
     resolution: {integrity: sha512-vmptmU/20UdIWHHhq7qCSHhHzK7Ro3YJ1utU0fBG7ujUc58LEfTtilKxcF0IOgSjT5XLcm7CBzDjbv4lcKApGQ==}
@@ -5804,6 +5886,9 @@ packages:
       '@types/react-dom':
         optional: true
 
+  raf-schd@4.0.3:
+    resolution: {integrity: sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==}
+
   react-dom@19.2.4:
     resolution: {integrity: sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==}
     peerDependencies:
@@ -5910,6 +5995,16 @@ packages:
     peerDependencies:
       '@types/react': '*'
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  react-uid@2.4.0:
+    resolution: {integrity: sha512-+MVs/25NrcZuGrmlVRWPOSsbS8y72GJOBsR7d68j3/wqOrRBF52U29XAw4+XSelw0Vm6s5VmGH5mCbTCPGVCVg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
@@ -6987,6 +7082,83 @@ snapshots:
       '@ast-grep/napi-win32-ia32-msvc': 0.37.0
       '@ast-grep/napi-win32-x64-msvc': 0.37.0
 
+  '@atlaskit/atlassian-context@0.6.0(react@19.2.4)':
+    dependencies:
+      '@babel/runtime': 7.28.4
+      react: 19.2.4
+
+  '@atlaskit/ds-lib@5.3.0(@types/react@19.2.11)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
+      '@babel/runtime': 7.28.4
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+      react-uid: 2.4.0(@types/react@19.2.11)(react@19.2.4)
+      tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@atlaskit/feature-gate-js-client@5.5.8(react@19.2.4)':
+    dependencies:
+      '@atlaskit/atlassian-context': 0.6.0(react@19.2.4)
+      '@babel/runtime': 7.28.4
+      '@statsig/client-core': 3.32.0
+      '@statsig/js-client': 3.32.0
+      eventemitter3: 4.0.7
+    transitivePeerDependencies:
+      - react
+
+  '@atlaskit/motion@5.3.11(@types/react@19.2.11)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.11)(react@19.2.4)
+      '@babel/runtime': 7.28.4
+      '@compiled/react': 0.18.6(react@19.2.4)
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@atlaskit/platform-feature-flags@1.1.3(react@19.2.4)':
+    dependencies:
+      '@atlaskit/feature-gate-js-client': 5.5.8(react@19.2.4)
+      '@babel/runtime': 7.28.4
+    transitivePeerDependencies:
+      - react
+
+  '@atlaskit/pragmatic-drag-and-drop-auto-scroll@2.1.5':
+    dependencies:
+      '@atlaskit/pragmatic-drag-and-drop': 1.7.7
+      '@babel/runtime': 7.28.4
+
+  '@atlaskit/pragmatic-drag-and-drop-flourish@2.0.12(@types/react@19.2.11)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/motion': 5.3.11(@types/react@19.2.11)(react@19.2.4)
+      '@atlaskit/tokens': 11.0.1(@types/react@19.2.11)(react@19.2.4)
+      '@babel/runtime': 7.28.4
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
+      - supports-color
+
+  '@atlaskit/pragmatic-drag-and-drop@1.7.7':
+    dependencies:
+      '@babel/runtime': 7.28.4
+      bind-event-listener: 3.0.0
+      raf-schd: 4.0.3
+
+  '@atlaskit/tokens@11.0.1(@types/react@19.2.11)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.11)(react@19.2.4)
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
+      '@babel/runtime': 7.28.4
+      '@babel/traverse': 7.29.0
+      '@babel/types': 7.29.0
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@babel/code-frame@7.28.6':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -7482,6 +7654,11 @@ snapshots:
     dependencies:
       conventional-commits-parser: 6.2.1
       picocolors: 1.1.1
+
+  '@compiled/react@0.18.6(react@19.2.4)':
+    dependencies:
+      csstype: 3.2.3
+      react: 19.2.4
 
   '@dprint/formatter@0.5.1': {}
 
@@ -9642,6 +9819,12 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
+  '@statsig/client-core@3.32.0': {}
+
+  '@statsig/js-client@3.32.0':
+    dependencies:
+      '@statsig/client-core': 3.32.0
+
   '@stylistic/eslint-plugin@5.7.0(eslint@9.39.2(jiti@2.6.1))':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.2(jiti@2.6.1))
@@ -9762,6 +9945,12 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
       use-sync-external-store: 1.6.0(react@19.2.4)
 
+  '@tanstack/react-virtual@3.13.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@tanstack/virtual-core': 3.13.19
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@tanstack/router-core@1.158.0':
     dependencies:
       '@tanstack/history': 1.154.14
@@ -9831,6 +10020,8 @@ snapshots:
       - supports-color
 
   '@tanstack/store@0.8.0': {}
+
+  '@tanstack/virtual-core@3.13.19': {}
 
   '@tanstack/virtual-file-routes@1.154.7': {}
 
@@ -10651,6 +10842,8 @@ snapshots:
       is-windows: 1.0.2
 
   binary-extensions@2.3.0: {}
+
+  bind-event-listener@3.0.0: {}
 
   bippy@0.3.34(@types/react@19.2.11)(react@19.2.4):
     dependencies:
@@ -13237,6 +13430,8 @@ snapshots:
       '@types/react': 19.2.11
       '@types/react-dom': 19.2.3(@types/react@19.2.11)
 
+  raf-schd@4.0.3: {}
+
   react-dom@19.2.4(react@19.2.4):
     dependencies:
       react: 19.2.4
@@ -13342,6 +13537,13 @@ snapshots:
   react-style-singleton@2.2.3(@types/react@19.2.11)(react@19.2.4):
     dependencies:
       get-nonce: 1.0.1
+      react: 19.2.4
+      tslib: 2.8.1
+    optionalDependencies:
+      '@types/react': 19.2.11
+
+  react-uid@2.4.0(@types/react@19.2.11)(react@19.2.4):
+    dependencies:
       react: 19.2.4
       tslib: 2.8.1
     optionalDependencies:
