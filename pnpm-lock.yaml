@@ -63,6 +63,9 @@ catalogs:
     clsx:
       specifier: 2.1.1
       version: 2.1.1
+    enum-plus:
+      specifier: ^3.1.8
+      version: 3.1.8
     es-toolkit:
       specifier: 1.44.0
       version: 1.44.0
@@ -354,6 +357,9 @@ importers:
       clsx:
         specifier: catalog:core
         version: 2.1.1
+      enum-plus:
+        specifier: catalog:core
+        version: 3.1.8
       es-toolkit:
         specifier: catalog:core
         version: 1.44.0
@@ -4353,6 +4359,10 @@ packages:
   entities@7.0.0:
     resolution: {integrity: sha512-FDWG5cmEYf2Z00IkYRhbFrwIwvdFKH07uV8dvNy0omp/Qb1xcyCWp2UDtcwJF4QZZvk0sLudP6/hAu42TaqVhQ==}
     engines: {node: '>=0.12'}
+
+  enum-plus@3.1.8:
+    resolution: {integrity: sha512-g2V3Bxj38a9x3bkBHiufnHpNJ5/LtUnEChZ5TXQEcCoLvK9T815GJALryBhcL/c40lU+Msa6P+hF8z7D7VO9vQ==}
+    engines: {node: '>=7.10.1'}
 
   env-paths@2.2.1:
     resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
@@ -11654,6 +11664,8 @@ snapshots:
   entities@6.0.1: {}
 
   entities@7.0.0: {}
+
+  enum-plus@3.1.8: {}
 
   env-paths@2.2.1: {}
 

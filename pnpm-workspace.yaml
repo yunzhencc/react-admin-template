@@ -30,6 +30,7 @@ catalogs:
     '@yunzhen/request': 1.0.1
     antd: 6.2.3
     clsx: 2.1.1
+    enum-plus: ^3.1.8
     es-toolkit: 1.44.0
     lexical: 0.40.0
     motion: 12.31.0

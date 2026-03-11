@@ -19,6 +19,7 @@
     "@yunzhen/utils": "workspace:*",
     "antd": "catalog:core",
     "clsx": "catalog:core",
+    "enum-plus": "catalog:core",
     "es-toolkit": "catalog:core",
     "motion": "catalog:core",
     "overlayscrollbars": "catalog:core",
