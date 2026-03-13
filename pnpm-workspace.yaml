@@ -56,13 +56,13 @@ catalogs:
     '@rsbuild/plugin-react': ^1.4.5
     '@rslib/core': ^0.19.4
     '@rspress/core': ^2.0.2
-    '@tailwindcss/vite': ^4.1.18
+    '@tailwindcss/vite': ^4.2.1
     '@tanstack/react-router-devtools': ^1.158.0
     '@tanstack/router-plugin': ^1.158.0
     '@types/node': ^25.0.10
     '@types/react': ^19.2.11
     '@types/react-dom': ^19.2.3
-    '@vitejs/plugin-react': ^5.1.3
+    '@vitejs/plugin-react': ^6.0.0
     cross-env: ^10.1.0
     eslint: ^9.39.2
     eslint-plugin-format: ^1.3.1
@@ -81,4 +81,4 @@ catalogs:
     unplugin-auto-import: ^21.0.0
     vite: ^8.0.0
     vite-plugin-html: ^3.2.2
-    vitest: ^4.0.18
+    vitest: ^4.1.0
